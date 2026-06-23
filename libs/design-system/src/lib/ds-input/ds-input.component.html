@@ -1,0 +1,28 @@
+<div class="ds-input" [class.ds-input--invalid]="!!error()">
+  @if (label()) {
+    <label class="ds-input__label" [attr.for]="id() || null">
+      {{ label() }}
+      @if (required()) {
+        <span class="ds-input__required" aria-hidden="true">*</span>
+      }
+    </label>
+  }
+
+  <input
+    class="ds-input__control"
+    [id]="id() || null"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [disabled]="isFieldDisabled()"
+    [required]="required()"
+    [value]="value()"
+    (input)="onInput($any($event.target).value)"
+    (blur)="onBlur()"
+  />
+
+  @if (error()) {
+    <p class="ds-input__message ds-input__message--error" role="alert">{{ error() }}</p>
+  } @else if (hint()) {
+    <p class="ds-input__message">{{ hint() }}</p>
+  }
+</div>

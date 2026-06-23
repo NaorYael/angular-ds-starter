@@ -1,0 +1,10 @@
+<div class="ds-grid" [style.height]="height()">
+  <ag-grid-angular
+    class="ds-grid__table"
+    [theme]="theme"
+    [rowData]="rowData()"
+    [columnDefs]="columnDefs()"
+    [gridOptions]="mergedGridOptions()"
+    (gridReady)="onGridReady($event)"
+  />
+</div>

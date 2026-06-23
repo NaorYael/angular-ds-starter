@@ -1,0 +1,54 @@
+<section class="page">
+  <header class="page-header">
+    <h1>Design System Components</h1>
+    <p>Lightweight, ready-to-use building blocks for prototypes and take-home assignments.</p>
+  </header>
+
+  <div class="demo-grid">
+    <article class="demo-card">
+      <h2>Button</h2>
+      <div class="demo-row">
+        <ds-button variant="primary" label="Primary" />
+        <ds-button variant="secondary" label="Secondary" />
+        <ds-button variant="tertiary" label="Tertiary" />
+        <ds-button variant="danger" label="Danger" />
+      </div>
+    </article>
+
+    <article class="demo-card">
+      <h2>Input</h2>
+      <ds-input
+        id="demo-email"
+        label="Email"
+        placeholder="you@example.com"
+        hint="Works with template-driven and reactive forms."
+        [(ngModel)]="email"
+      />
+      <p class="demo-hint">Current value: {{ email || '—' }}</p>
+    </article>
+
+    <article class="demo-card">
+      <h2>Dialog</h2>
+      <ds-button variant="primary" label="Open dialog" (clicked)="openDialog()" />
+    </article>
+  </div>
+</section>
+
+<ds-dialog
+  [visible]="dialogVisible()"
+  [modal]="true"
+  [showFooter]="true"
+  width="28rem"
+  (closed)="closeDialog()"
+>
+  <div ds-header>
+    <h2 class="dialog-title">Welcome</h2>
+  </div>
+  <div ds-body>
+    <p>This dialog comes from <code>@ds/design-system</code> and works out of the box.</p>
+  </div>
+  <div ds-footer>
+    <ds-button variant="secondary" label="Cancel" (clicked)="closeDialog()" />
+    <ds-button variant="primary" label="Got it" (clicked)="closeDialog()" />
+  </div>
+</ds-dialog>

@@ -1,0 +1,69 @@
+{
+  "name": "starter",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/starter/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/starter/browser",
+        "index": "apps/starter/src/index.html",
+        "browser": "apps/starter/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/starter/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/starter/src/favicon.ico", "apps/starter/src/assets"],
+        "styles": ["apps/starter/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "port": 4200
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "starter:build:production"
+        },
+        "development": {
+          "buildTarget": "starter:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "continuous": true
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "apps/starter/jest.config.ts",
+        "tsConfig": "apps/starter/tsconfig.spec.json"
+      }
+    }
+  }
+}

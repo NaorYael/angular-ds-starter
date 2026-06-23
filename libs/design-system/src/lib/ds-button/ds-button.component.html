@@ -1,0 +1,17 @@
+<button
+  class="ds-button"
+  [class]="'ds-button--' + variant() + ' ds-button--' + size()"
+  [attr.type]="type()"
+  [disabled]="disabled() || loading()"
+  [attr.aria-busy]="loading()"
+  (click)="onClick($event)"
+>
+  @if (loading()) {
+    <span class="ds-button__spinner" aria-hidden="true"></span>
+  }
+  @if (label()) {
+    <span class="ds-button__label">{{ label() }}</span>
+  } @else {
+    <ng-content />
+  }
+</button>

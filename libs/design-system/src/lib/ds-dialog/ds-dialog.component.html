@@ -1,0 +1,36 @@
+@if (visible()) {
+  <div
+    class="ds-dialog-backdrop"
+    [class.ds-dialog-backdrop--modal]="modal()"
+    (click)="onBackdropClick()"
+    (keydown)="onEscape($event)"
+  >
+    <div
+      class="ds-dialog"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="title() || null"
+      [style.max-width]="width()"
+      (click)="$event.stopPropagation()"
+    >
+      <header class="ds-dialog__header">
+        <div class="ds-dialog__header-content">
+          <ng-content select="[ds-header]" />
+        </div>
+        @if (closable()) {
+          <button type="button" class="ds-dialog__close" aria-label="Close dialog" (click)="close()">×</button>
+        }
+      </header>
+
+      <div class="ds-dialog__body">
+        <ng-content select="[ds-body]" />
+      </div>
+
+      @if (showFooter()) {
+        <footer class="ds-dialog__footer">
+          <ng-content select="[ds-footer]" />
+        </footer>
+      }
+    </div>
+  </div>
+}
