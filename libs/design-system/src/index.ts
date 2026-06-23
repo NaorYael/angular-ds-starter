@@ -15,3 +15,6 @@ export * from './lib/ds-tabs/ds-tabs.component';
 export * from './lib/ds-tabs/ds-tab-panel.component';
 export * from './lib/ds-spinner/ds-spinner.component';
 export * from './lib/ds-empty-state/ds-empty-state.component';
+export * from './lib/charts/ds-chart.types';
+export * from './lib/charts/ds-chart/ds-chart.component';
+export * from './lib/charts/ds-chart-card/ds-chart-card.component';

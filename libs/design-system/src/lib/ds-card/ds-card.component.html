@@ -1,0 +1,24 @@
+<article class="ds-card" [class.ds-card--flat]="!padding()">
+  @if (title() || subtitle()) {
+    <header class="ds-card__header">
+      @if (title()) {
+        <h3 class="ds-card__title">{{ title() }}</h3>
+      }
+      @if (subtitle()) {
+        <p class="ds-card__subtitle">{{ subtitle() }}</p>
+      }
+      <ng-content select="[ds-card-actions]" />
+    </header>
+  } @else {
+    <ng-content select="[ds-card-header]" />
+  }
+
+  <div class="ds-card__body" [class.ds-card__body--padded]="padding()">
+    <ng-content select="[ds-card-body]" />
+    <ng-content />
+  </div>
+
+  <footer class="ds-card__footer">
+    <ng-content select="[ds-card-footer]" />
+  </footer>
+</article>

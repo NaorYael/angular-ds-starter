@@ -1,0 +1,20 @@
+<div class="ds-toast-stack" aria-live="polite" aria-relevant="additions">
+  @for (toast of toastService.toasts(); track toast.id) {
+    <div class="ds-toast" [class]="'ds-toast--' + toast.variant" role="status">
+      <div class="ds-toast__content">
+        @if (toast.title) {
+          <p class="ds-toast__title">{{ toast.title }}</p>
+        }
+        <p class="ds-toast__message">{{ toast.message }}</p>
+      </div>
+      <button
+        type="button"
+        class="ds-toast__close"
+        [attr.aria-label]="'Dismiss ' + toastService.variantLabel(toast.variant) + ' notification'"
+        (click)="toastService.dismiss(toast.id)"
+      >
+        ×
+      </button>
+    </div>
+  }
+</div>

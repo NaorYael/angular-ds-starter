@@ -1,0 +1,16 @@
+<label class="ds-checkbox" [class.ds-checkbox--disabled]="isFieldDisabled()">
+  <input
+    class="ds-checkbox__input"
+    type="checkbox"
+    [id]="id() || null"
+    [checked]="checked()"
+    [disabled]="isFieldDisabled()"
+    [attr.aria-checked]="indeterminate() ? 'mixed' : checked()"
+    (change)="onChange($event)"
+    (blur)="onBlur()"
+  />
+  <span class="ds-checkbox__box" [class.ds-checkbox__box--indeterminate]="indeterminate()"></span>
+  @if (label()) {
+    <span class="ds-checkbox__label">{{ label() }}</span>
+  }
+</label>

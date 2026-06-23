@@ -10,6 +10,10 @@ export const appRoutes: Route[] = [
     loadComponent: () => import('./pages/grid/grid.component').then(m => m.GridComponent),
   },
   {
+    path: 'charts',
+    loadComponent: () => import('./pages/charts/charts.component').then(m => m.ChartsComponent),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

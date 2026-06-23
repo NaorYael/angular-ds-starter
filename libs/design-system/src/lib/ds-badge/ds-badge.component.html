@@ -1,0 +1,5 @@
+<span class="ds-badge" [class]="'ds-badge--' + variant()" [class.ds-badge--dot]="dot()">
+  @if (!dot()) {
+    {{ label() }}
+  }
+</span>

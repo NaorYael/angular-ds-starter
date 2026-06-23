@@ -1,0 +1,43 @@
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.375rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+
+  &--dot {
+    width: 0.5rem;
+    min-height: 0.5rem;
+    padding: 0;
+  }
+
+  &--neutral {
+    background: var(--ds-color-surface-muted);
+    color: var(--ds-color-text-muted);
+  }
+
+  &--primary {
+    background: var(--ds-color-primary-subtle);
+    color: var(--ds-color-primary);
+  }
+
+  &--success {
+    background: var(--ds-color-success-subtle);
+    color: var(--ds-color-success);
+  }
+
+  &--warning {
+    background: var(--ds-color-warning-subtle);
+    color: var(--ds-color-warning);
+  }
+
+  &--danger {
+    background: rgb(220 38 38 / 12%);
+    color: var(--ds-color-danger);
+  }
+}

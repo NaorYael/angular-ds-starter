@@ -1,0 +1,39 @@
+<section class="page">
+  <header class="page-header">
+    <h1>Charts</h1>
+    <p>Chart.js wrapped as <code>ds-chart</code> with DS colors and card layout.</p>
+  </header>
+
+  <div class="charts-grid">
+    <ds-chart-card title="Monthly revenue" subtitle="Bar chart for KPIs and comparisons">
+      <ds-chart
+        type="bar"
+        [labels]="monthLabels"
+        [datasets]="revenueDataset"
+        height="18rem"
+        ariaLabel="Monthly revenue bar chart"
+      />
+    </ds-chart-card>
+
+    <ds-chart-card title="Traffic sources" subtitle="Line chart for trends over time">
+      <ds-chart
+        type="line"
+        [labels]="monthLabels"
+        [datasets]="trafficDatasets"
+        [options]="{ showLegend: true }"
+        height="18rem"
+        ariaLabel="Traffic sources line chart"
+      />
+    </ds-chart-card>
+
+    <ds-chart-card title="Channel mix" subtitle="Doughnut chart for distribution">
+      <ds-chart
+        type="doughnut"
+        [labels]="channelLabels"
+        [datasets]="channelDataset"
+        height="18rem"
+        ariaLabel="Channel mix doughnut chart"
+      />
+    </ds-chart-card>
+  </div>
+</section>

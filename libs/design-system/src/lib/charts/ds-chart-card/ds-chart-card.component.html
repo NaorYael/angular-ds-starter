@@ -1,0 +1,15 @@
+<article class="ds-chart-card">
+  <header class="ds-chart-card__header">
+    <div>
+      <h3 class="ds-chart-card__title">{{ title() }}</h3>
+      @if (subtitle()) {
+        <p class="ds-chart-card__subtitle">{{ subtitle() }}</p>
+      }
+    </div>
+    <ng-content select="[ds-chart-card-actions]" />
+  </header>
+
+  <div class="ds-chart-card__body">
+    <ng-content />
+  </div>
+</article>

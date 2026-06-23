@@ -1,0 +1,16 @@
+<p-toast [key]="key" [styleClass]="styleClass" #toast [position]="config.position" [id]="key" (onClose)="onCloseToast($event)">
+  <ng-template #message let-message>
+    <div class="toast-item-content">
+      <div class="flex toast-item-content__details">
+        <div class="toast-icon"></div>
+        <div class="flex flex-col">
+          <label class="title">{{ message.summary }}</label>
+          <label>{{ message.detail }}</label>
+          @if (detailsButton) {
+            <ds-button label="פרטים" variant="secondary" (clickAction)="onClickDetails(message)"></ds-button>
+          }
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-toast>

@@ -10,9 +10,9 @@ Maintained by [NaorYael](https://github.com/NaorYael).
 
 | Package | Description |
 |---------|-------------|
-| `@ds/design-system` | `ds-button`, `ds-input`, `ds-textarea`, `ds-select`, `ds-checkbox`, `ds-switch`, `ds-badge`, `ds-card`, `ds-tabs`, `ds-spinner`, `ds-empty-state`, `ds-toast`, `ds-dialog`, CSS tokens |
+| `@ds/design-system` | Form controls, layout, toast, dialog, **`ds-chart`** (bar/line/doughnut), CSS tokens |
 | `@ds/grid` | AG Grid wrapper (`ds-grid`) |
-| `apps/starter` | Demo app with component and grid examples |
+| `apps/starter` | Demo app with component, grid, and chart examples |
 
 ## Quick start
 
@@ -306,6 +306,30 @@ export class GridPageComponent {
 }
 ```
 
+### Charts
+
+Uses [Chart.js](https://www.chartjs.org/) via `ds-chart` and `ds-chart-card`.
+
+```typescript
+import { DsChartCardComponent, DsChartComponent, DsChartDataset } from '@ds/design-system';
+
+readonly labels = ['Jan', 'Feb', 'Mar'];
+readonly datasets: DsChartDataset[] = [
+  { label: 'Revenue', data: [12, 19, 14], color: '#2563eb' },
+];
+```
+
+```html
+<ds-chart-card title="Monthly revenue" subtitle="Last 3 months">
+  <ds-chart type="bar" [labels]="labels" [datasets]="datasets" height="18rem" />
+</ds-chart-card>
+
+<ds-chart type="line" [labels]="labels" [datasets]="datasets" />
+<ds-chart type="doughnut" [labels]="['A', 'B', 'C']" [datasets]="[{ label: 'Share', data: [40, 35, 25] }]" />
+```
+
+Chart types: `bar`, `line`, `doughnut`. Colors use DS palette and CSS tokens automatically.
+
 ## Design tokens
 
 Global CSS variables are defined in `apps/starter/src/styles.scss`:
@@ -342,6 +366,7 @@ angular-ds-starter/
 
 - Angular 21, Nx 22
 - AG Grid 34
+- Chart.js 4
 - Standalone components, signals, OnPush change detection
 - SCSS with `--ds-*` CSS variables (no UI framework required)
 

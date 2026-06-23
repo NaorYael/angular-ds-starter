@@ -1,0 +1,64 @@
+.ds-toast-stack {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: min(24rem, calc(100vw - 2rem));
+}
+
+.ds-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--ds-color-border);
+  border-radius: var(--ds-radius-md);
+  background: var(--ds-color-surface);
+  box-shadow: var(--ds-shadow-lg);
+}
+
+.ds-toast__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ds-toast__title {
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.ds-toast__message {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ds-color-text);
+}
+
+.ds-toast__close {
+  border: none;
+  background: transparent;
+  color: var(--ds-color-text-muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ds-toast--info {
+  border-left: 4px solid var(--ds-color-primary);
+}
+
+.ds-toast--success {
+  border-left: 4px solid var(--ds-color-success);
+}
+
+.ds-toast--warning {
+  border-left: 4px solid var(--ds-color-warning);
+}
+
+.ds-toast--error {
+  border-left: 4px solid var(--ds-color-danger);
+}

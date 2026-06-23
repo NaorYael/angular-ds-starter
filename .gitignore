@@ -59,7 +59,6 @@ Thumbs.db
 /libs/design-system/src/lib/ds-action-menu/
 /libs/design-system/src/lib/ds-autocomplete/
 /libs/design-system/src/lib/ds-avatar/
-/libs/design-system/src/lib/ds-badge/
 /libs/design-system/src/lib/ds-bulk-actions-bar/
 /libs/design-system/src/lib/ds-button-action/
 /libs/design-system/src/lib/ds-button-action-icon/
@@ -69,10 +68,8 @@ Thumbs.db
 /libs/design-system/src/lib/ds-button-icon-only/
 /libs/design-system/src/lib/ds-button-with-drop/
 /libs/design-system/src/lib/ds-calendar/
-/libs/design-system/src/lib/ds-card/
 /libs/design-system/src/lib/ds-carousel/
 /libs/design-system/src/lib/ds-centered-content-shell/
-/libs/design-system/src/lib/ds-checkbox/
 /libs/design-system/src/lib/ds-confirm-dialog/
 /libs/design-system/src/lib/ds-dropdown/
 /libs/design-system/src/lib/ds-empty-list/
@@ -132,10 +129,12 @@ Thumbs.db
 /libs/design-system/src/lib/ds-tabs-for-input/
 /libs/design-system/src/lib/ds-tag/
 /libs/design-system/src/lib/ds-text-area/
-/libs/design-system/src/lib/ds-toast/
 /libs/design-system/src/lib/ds-validation-input/
 /libs/design-system/src/lib/ds-validation-message/
-/libs/design-system/src/lib/charts/
+/libs/design-system/src/lib/charts/ds-bar-chart/
+/libs/design-system/src/lib/charts/ds-donut-chart/
+/libs/design-system/src/lib/charts/const/
+/libs/design-system/src/lib/charts/interfaces/
 /libs/design-system/src/lib/primeng/
 /libs/grid/.storybook/
 /libs/grid/src/lib/ds-grid/components/

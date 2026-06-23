@@ -22,7 +22,8 @@
     "src/lib/ds-switch/**/*.ts",
     "src/lib/ds-tabs/**/*.ts",
     "src/lib/ds-spinner/**/*.ts",
-    "src/lib/ds-empty-state/**/*.ts"
+    "src/lib/ds-empty-state/**/*.ts",
+    "src/lib/charts/**/*.ts"
   ],
   "exclude": ["**/*.spec.ts", "**/*.stories.ts"]
 }
