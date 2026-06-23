@@ -1,0 +1,26 @@
+<div class="ds-switch" [class.ds-switch--disabled]="isFieldDisabled()">
+  <button
+    type="button"
+    class="ds-switch__control"
+    role="switch"
+    [id]="id() || null"
+    [attr.aria-checked]="checked()"
+    [attr.aria-label]="label() || null"
+    [disabled]="isFieldDisabled()"
+    (click)="toggle()"
+    (blur)="onBlur()"
+  >
+    <span class="ds-switch__thumb"></span>
+  </button>
+
+  @if (label() || description()) {
+    <div class="ds-switch__content">
+      @if (label()) {
+        <span class="ds-switch__label">{{ label() }}</span>
+      }
+      @if (description()) {
+        <span class="ds-switch__description">{{ description() }}</span>
+      }
+    </div>
+  }
+</div>

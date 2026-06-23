@@ -1,0 +1,37 @@
+<div class="ds-textarea" [class.ds-textarea--invalid]="!!error()">
+  @if (label()) {
+    <label class="ds-textarea__label" [attr.for]="id() || null">
+      {{ label() }}
+      @if (required()) {
+        <span class="ds-textarea__required" aria-hidden="true">*</span>
+      }
+    </label>
+  }
+
+  <textarea
+    class="ds-textarea__control"
+    [id]="id() || null"
+    [rows]="rows()"
+    [placeholder]="placeholder()"
+    [disabled]="isFieldDisabled()"
+    [required]="required()"
+    [attr.maxlength]="maxLength()"
+    [value]="value()"
+    (input)="onInput($any($event.target).value)"
+    (blur)="onBlur()"
+  ></textarea>
+
+  <div class="ds-textarea__footer">
+    @if (error()) {
+      <p class="ds-textarea__message ds-textarea__message--error" role="alert">{{ error() }}</p>
+    } @else if (hint()) {
+      <p class="ds-textarea__message">{{ hint() }}</p>
+    } @else {
+      <span></span>
+    }
+
+    @if (maxLength() !== null) {
+      <span class="ds-textarea__count">{{ characterCount() }}</span>
+    }
+  </div>
+</div>

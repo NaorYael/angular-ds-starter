@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nx serve starter",
     "build": "nx build starter",
-    "lint": "nx run-many -t lint --projects=starter,design-system,ds-grid"
+    "lint": "nx run-many -t lint --projects=starter,design-system,ds-grid",
+    "new": "node tools/new-project.mjs"
   },
   "dependencies": {
     "@angular/animations": "21.2.9",

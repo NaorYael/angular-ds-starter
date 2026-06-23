@@ -1,7 +1,11 @@
 # compiled output
 dist
-tmp
+.tmp
 /out-tsc
+
+# Local copies created from the starter (always copy outside the repo)
+/my-project/
+/my-take-home/
 
 # dependencies
 node_modules

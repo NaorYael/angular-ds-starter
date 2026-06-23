@@ -10,7 +10,7 @@ Maintained by [NaorYael](https://github.com/NaorYael).
 
 | Package | Description |
 |---------|-------------|
-| `@ds/design-system` | `ds-button`, `ds-input`, `ds-select`, `ds-checkbox`, `ds-badge`, `ds-card`, `ds-toast`, `ds-dialog`, CSS tokens |
+| `@ds/design-system` | `ds-button`, `ds-input`, `ds-textarea`, `ds-select`, `ds-checkbox`, `ds-switch`, `ds-badge`, `ds-card`, `ds-tabs`, `ds-spinner`, `ds-empty-state`, `ds-toast`, `ds-dialog`, CSS tokens |
 | `@ds/grid` | AG Grid wrapper (`ds-grid`) |
 | `apps/starter` | Demo app with component and grid examples |
 
@@ -24,6 +24,72 @@ npm start
 ```
 
 Open [http://localhost:4200](http://localhost:4200).
+
+## Copy the starter for a new project
+
+Use this when you start a **take-home assignment**, prototype, or client project. You get a fresh folder with no git history and no `node_modules`.
+
+### Option 1 — Script (recommended)
+
+From inside `angular-ds-starter`:
+
+```bash
+npm run new -- ../my-take-home
+cd ../my-take-home
+npm install
+npm start
+```
+
+Always copy **outside** the starter repo (`../`) to avoid nested Nx projects.
+
+This copies the repo, sets `package.json` name to `@ds/<folder-name>`, runs `git init`, and skips `node_modules`, `dist`, and cache folders.
+
+### Option 2 — Git clone
+
+```bash
+git clone git@github.com:NaorYael/angular-ds-starter.git my-project
+cd my-project
+rm -rf .git
+git init
+npm install
+npm start
+```
+
+Use this when the starter already lives on GitHub.
+
+### Option 3 — GitHub Template
+
+1. Open [github.com/NaorYael/angular-ds-starter](https://github.com/NaorYael/angular-ds-starter)
+2. **Settings** → check **Template repository**
+3. On the repo page, click **Use this template** → **Create a new repository**
+
+GitHub creates a clean copy under your account with its own history.
+
+### Option 4 — Manual copy
+
+```bash
+cp -R angular-ds-starter my-project
+cd my-project
+rm -rf node_modules dist .git .angular .nx
+npm install
+npm start
+```
+
+### After copying
+
+| Step | What to do |
+|------|------------|
+| 1 | `npm install` && `npm start` — verify it runs |
+| 2 | Optionally rename `package.json` `"name"` |
+| 3 | Clear demo content in `apps/starter/src/app/pages/` when you begin real work |
+| 4 | Keep `@ds/design-system` and `@ds/grid` — that is your design system |
+| 5 | Create a new GitHub repo and push when ready |
+
+You do **not** need to rename `apps/starter` for most assignments. Build inside it, or add another Nx app later with:
+
+```bash
+npx nx g @nx/angular:application my-app --standalone --routing
+```
 
 ## Rename the project
 
@@ -98,6 +164,71 @@ import { DsCheckboxComponent } from '@ds/design-system';
 export class MyComponent {
   accepted = false;
 }
+```
+
+### Textarea
+
+```typescript
+import { DsTextareaComponent } from '@ds/design-system';
+
+@Component({
+  imports: [DsTextareaComponent, FormsModule],
+  template: `<ds-textarea label="Notes" [maxLength]="200" [(ngModel)]="notes" />`,
+})
+export class MyComponent {
+  notes = '';
+}
+```
+
+### Switch
+
+```typescript
+import { DsSwitchComponent } from '@ds/design-system';
+
+@Component({
+  imports: [DsSwitchComponent, FormsModule],
+  template: `
+    <ds-switch
+      label="Notifications"
+      description="Email me when something changes"
+      [(ngModel)]="enabled"
+    />
+  `,
+})
+export class MyComponent {
+  enabled = true;
+}
+```
+
+### Tabs
+
+```html
+<ds-tabs [(value)]="activeTab">
+  <ds-tab-panel label="Overview" value="overview">
+    Overview content
+  </ds-tab-panel>
+  <ds-tab-panel label="Settings" value="settings">
+    Settings content
+  </ds-tab-panel>
+</ds-tabs>
+```
+
+### Spinner
+
+```html
+<ds-spinner size="md" label="Loading data" />
+```
+
+### Empty state
+
+```html
+<ds-empty-state
+  title="No results"
+  description="Try adjusting your filters."
+  icon="🔍"
+>
+  <ds-button ds-empty-action variant="primary" label="Clear filters" />
+</ds-empty-state>
 ```
 
 ### Badge

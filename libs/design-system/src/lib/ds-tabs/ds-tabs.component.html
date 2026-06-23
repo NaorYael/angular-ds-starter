@@ -1,0 +1,20 @@
+<div class="ds-tabs">
+  <div class="ds-tabs__list" role="tablist" [attr.aria-label]="ariaLabel()">
+    @for (panel of panels(); track panel.value()) {
+      <button
+        type="button"
+        class="ds-tabs__tab"
+        role="tab"
+        [class.ds-tabs__tab--active]="isActive(panel.value())"
+        [attr.aria-selected]="isActive(panel.value())"
+        (click)="selectTab(panel.value())"
+      >
+        {{ panel.label() }}
+      </button>
+    }
+  </div>
+
+  <div class="ds-tabs__panels">
+    <ng-content />
+  </div>
+</div>

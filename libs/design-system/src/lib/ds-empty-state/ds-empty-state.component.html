@@ -1,0 +1,10 @@
+<div class="ds-empty-state">
+  <div class="ds-empty-state__icon" aria-hidden="true">{{ icon() }}</div>
+  <h3 class="ds-empty-state__title">{{ title() }}</h3>
+  @if (description()) {
+    <p class="ds-empty-state__description">{{ description() }}</p>
+  }
+  <div class="ds-empty-state__actions">
+    <ng-content select="[ds-empty-action]" />
+  </div>
+</div>

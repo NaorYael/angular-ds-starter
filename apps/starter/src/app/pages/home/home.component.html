@@ -46,6 +46,55 @@
     </article>
 
     <article class="demo-card">
+      <h2>Textarea</h2>
+      <ds-textarea
+        id="demo-notes"
+        label="Notes"
+        placeholder="Add context for your assignment..."
+        hint="Supports maxlength counter."
+        [maxLength]="200"
+        [(ngModel)]="notes"
+      />
+    </article>
+
+    <article class="demo-card">
+      <h2>Switch</h2>
+      <ds-switch
+        id="demo-notifications"
+        label="Email notifications"
+        description="Receive updates when tasks are assigned."
+        [(ngModel)]="notificationsEnabled"
+      />
+      <p class="demo-hint">Enabled: {{ notificationsEnabled ? 'Yes' : 'No' }}</p>
+    </article>
+
+    <article class="demo-card demo-card--wide">
+      <h2>Tabs</h2>
+      <ds-tabs [(value)]="activeTab">
+        <ds-tab-panel label="Overview" value="overview">
+          <p>High-level summary content for the active tab.</p>
+        </ds-tab-panel>
+        <ds-tab-panel label="Settings" value="settings">
+          <p>Settings and preferences go here.</p>
+        </ds-tab-panel>
+        <ds-tab-panel label="Activity" value="activity">
+          <p>Recent activity feed placeholder.</p>
+        </ds-tab-panel>
+      </ds-tabs>
+      <p class="demo-hint">Active tab: {{ activeTab() }}</p>
+    </article>
+
+    <article class="demo-card">
+      <h2>Spinner</h2>
+      <div class="demo-row">
+        <ds-spinner size="sm" />
+        <ds-spinner size="md" />
+        <ds-spinner size="lg" />
+        <ds-button variant="primary" label="Loading" [loading]="true" />
+      </div>
+    </article>
+
+    <article class="demo-card">
       <h2>Badge</h2>
       <div class="demo-row">
         <ds-badge label="Neutral" />
@@ -68,6 +117,25 @@
           <ds-button variant="primary" label="Save" />
         </div>
       </ds-card>
+    </article>
+
+    <article class="demo-card demo-card--wide">
+      <h2>Empty state</h2>
+      @if (showEmptyItems()) {
+        <ds-card title="Items" subtitle="Your list would appear here.">
+          <div ds-card-body>
+            <p>Imagine a populated table or card list in this section.</p>
+          </div>
+        </ds-card>
+      } @else {
+        <ds-empty-state
+          title="No items yet"
+          description="Create your first item to populate this section."
+          icon="🗂️"
+        >
+          <ds-button ds-empty-action variant="primary" label="Create item" (clicked)="showEmptyItems.set(true)" />
+        </ds-empty-state>
+      }
     </article>
 
     <article class="demo-card">

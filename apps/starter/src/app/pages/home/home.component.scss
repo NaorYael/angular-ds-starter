@@ -20,6 +20,11 @@
 .demo-grid {
   display: grid;
   gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.demo-card--wide {
+  grid-column: 1 / -1;
 }
 
 .demo-card {

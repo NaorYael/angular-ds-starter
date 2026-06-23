@@ -6,9 +6,15 @@ import {
   DsCardComponent,
   DsCheckboxComponent,
   DsDialogComponent,
+  DsEmptyStateComponent,
   DsInputComponent,
   DsSelectComponent,
   DsSelectOption,
+  DsSpinnerComponent,
+  DsSwitchComponent,
+  DsTabPanelComponent,
+  DsTabsComponent,
+  DsTextareaComponent,
   DsToastService,
 } from '@ds/design-system';
 
@@ -23,6 +29,12 @@ import {
     DsCheckboxComponent,
     DsBadgeComponent,
     DsCardComponent,
+    DsTextareaComponent,
+    DsSwitchComponent,
+    DsTabsComponent,
+    DsTabPanelComponent,
+    DsSpinnerComponent,
+    DsEmptyStateComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -32,9 +44,13 @@ export class HomeComponent {
   private readonly toastService = inject(DsToastService);
 
   email = '';
+  notes = '';
   role = 'editor';
   termsAccepted = false;
+  notificationsEnabled = true;
+  readonly activeTab = signal('overview');
   readonly dialogVisible = signal(false);
+  readonly showEmptyItems = signal(false);
 
   readonly roleOptions: DsSelectOption[] = [
     { label: 'Admin', value: 'admin' },

@@ -17,7 +17,12 @@
     "src/lib/ds-checkbox/**/*.ts",
     "src/lib/ds-badge/**/*.ts",
     "src/lib/ds-card/**/*.ts",
-    "src/lib/ds-toast/**/*.ts"
+    "src/lib/ds-toast/**/*.ts",
+    "src/lib/ds-textarea/**/*.ts",
+    "src/lib/ds-switch/**/*.ts",
+    "src/lib/ds-tabs/**/*.ts",
+    "src/lib/ds-spinner/**/*.ts",
+    "src/lib/ds-empty-state/**/*.ts"
   ],
   "exclude": ["**/*.spec.ts", "**/*.stories.ts"]
 }
