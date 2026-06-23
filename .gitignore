@@ -57,7 +57,9 @@ Thumbs.db
 /libs/design-system/toast-messages/
 /libs/design-system/src/lib/ds-accordion-card/
 /libs/design-system/src/lib/ds-action-menu/
+/libs/design-system/src/lib/ds-bulk-actions-bar/
 /libs/design-system/src/lib/ds-action-menu/
+/libs/design-system/src/lib/ds-bulk-actions-bar/
 /libs/design-system/src/lib/ds-button-action/
 /libs/design-system/src/lib/ds-button-action-icon/
 /libs/design-system/src/lib/ds-button-action-with-drop/
