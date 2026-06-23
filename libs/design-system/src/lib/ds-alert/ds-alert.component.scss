@@ -1,0 +1,58 @@
+.ds-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--ds-radius-md);
+}
+
+.ds-alert__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ds-alert__title {
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.ds-alert__message {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.ds-alert__close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ds-alert--info {
+  background: var(--ds-color-primary-subtle);
+  color: var(--ds-color-primary);
+  border-color: rgb(37 99 235 / 20%);
+}
+
+.ds-alert--success {
+  background: var(--ds-color-success-subtle);
+  color: var(--ds-color-success);
+  border-color: rgb(21 128 61 / 20%);
+}
+
+.ds-alert--warning {
+  background: var(--ds-color-warning-subtle);
+  color: var(--ds-color-warning);
+  border-color: rgb(180 83 9 / 20%);
+}
+
+.ds-alert--error {
+  background: rgb(220 38 38 / 10%);
+  color: var(--ds-color-danger);
+  border-color: rgb(220 38 38 / 20%);
+}

@@ -1,0 +1,35 @@
+<fieldset class="ds-radio" [class.ds-radio--invalid]="!!error()">
+  @if (label()) {
+    <legend class="ds-radio__legend">
+      {{ label() }}
+      @if (required()) {
+        <span class="ds-radio__required" aria-hidden="true">*</span>
+      }
+    </legend>
+  }
+
+  <div class="ds-radio__options" [class.ds-radio__options--horizontal]="layout() === 'horizontal'" role="radiogroup">
+    @for (option of options(); track option.value; let index = $index) {
+      <label class="ds-radio__option" [class.ds-radio__option--disabled]="isFieldDisabled() || option.disabled">
+        <input
+          class="ds-radio__input"
+          type="radio"
+          [id]="optionId(option, index)"
+          [name]="id() || 'ds-radio-group'"
+          [checked]="isSelected(option)"
+          [disabled]="isFieldDisabled() || !!option.disabled"
+          (change)="selectOption(option)"
+          (blur)="onBlur()"
+        />
+        <span class="ds-radio__control"></span>
+        <span class="ds-radio__label">{{ option.label }}</span>
+      </label>
+    }
+  </div>
+
+  @if (error()) {
+    <p class="ds-radio__message ds-radio__message--error" role="alert">{{ error() }}</p>
+  } @else if (hint()) {
+    <p class="ds-radio__message">{{ hint() }}</p>
+  }
+</fieldset>

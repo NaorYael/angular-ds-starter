@@ -1,0 +1,38 @@
+<section class="page">
+  <header class="page-header dashboard-header">
+    <div class="dashboard-header__user">
+      <ds-avatar [name]="user()?.name || 'User'" size="lg" />
+      <div>
+        <h1>Dashboard</h1>
+        <p>Welcome back, {{ user()?.name }} ({{ user()?.email }})</p>
+      </div>
+    </div>
+
+    <ds-button variant="secondary" label="Sign out" (clicked)="logout()" />
+  </header>
+
+  <ds-alert
+    variant="info"
+    title="Protected route"
+    message="This page is behind authGuard. HTTP calls use the auth interceptor to attach a Bearer token."
+  />
+
+  <section class="dashboard-panel">
+    <div class="dashboard-panel__header">
+      <h2>HTTP skeleton</h2>
+      <ds-button variant="primary" label="Load sample API data" [loading]="apiLoading()" (clicked)="loadSampleData()" />
+    </div>
+
+    @if (apiError()) {
+      <ds-alert variant="error" [message]="apiError()" />
+    }
+
+    @if (sampleTodos().length) {
+      <ul class="todo-list">
+        @for (todo of sampleTodos(); track todo.id) {
+          <li>{{ todo.title }}</li>
+        }
+      </ul>
+    }
+  </section>
+</section>

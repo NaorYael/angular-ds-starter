@@ -46,6 +46,76 @@
     </article>
 
     <article class="demo-card">
+      <h2>Radio</h2>
+      <ds-radio id="demo-plan" label="Plan" [options]="planOptions" [(ngModel)]="plan" />
+      <p class="demo-hint">Selected plan: {{ plan }}</p>
+    </article>
+
+    <article class="demo-card">
+      <h2>Password</h2>
+      <ds-input-password id="demo-password" label="Password" [(ngModel)]="password" />
+    </article>
+
+    <article class="demo-card">
+      <h2>Datepicker</h2>
+      <ds-datepicker id="demo-date" label="Start date" hint="Uses native date input." [(ngModel)]="birthDate" />
+      <p class="demo-hint">Selected: {{ birthDate || '—' }}</p>
+    </article>
+
+    <article class="demo-card">
+      <h2>Menu</h2>
+      <ds-menu label="Actions" [items]="menuItems" (itemSelected)="onMenuSelect($event)" />
+      @if (menuMessage()) {
+        <p class="demo-hint">{{ menuMessage() }}</p>
+      }
+    </article>
+
+    <article class="demo-card">
+      <h2>Tooltip & Avatar</h2>
+      <div class="demo-row">
+        <ds-tooltip text="Edit profile settings">
+          <ds-button variant="secondary" label="Hover me" />
+        </ds-tooltip>
+        <ds-avatar name="Naor Yael" size="md" />
+        <ds-avatar name="Demo User" imageUrl="https://i.pravatar.cc/80?img=12" size="lg" />
+      </div>
+    </article>
+
+    <article class="demo-card demo-card--wide">
+      <h2>Alert</h2>
+      @if (showAlerts()) {
+        <div class="demo-stack">
+          <ds-alert variant="info" title="Heads up" message="Inline alerts are great for form and page feedback." />
+          <ds-alert
+            variant="success"
+            message="Saved successfully."
+            [dismissible]="true"
+            (dismissed)="showAlerts.set(false)"
+          />
+        </div>
+      } @else {
+        <ds-button variant="secondary" label="Show alerts again" (clicked)="showAlerts.set(true)" />
+      }
+    </article>
+
+    <article class="demo-card demo-card--wide">
+      <h2>Skeleton</h2>
+      @if (showSkeletonDemo()) {
+        <div class="skeleton-demo">
+          <ds-skeleton variant="circle" width="3rem" height="3rem" />
+          <div class="skeleton-demo__lines">
+            <ds-skeleton variant="text" width="40%" height="0.875rem" />
+            <ds-skeleton variant="text" width="100%" height="0.875rem" />
+            <ds-skeleton variant="rect" width="100%" height="5rem" />
+          </div>
+        </div>
+        <ds-button variant="tertiary" label="Hide skeleton" (clicked)="showSkeletonDemo.set(false)" />
+      } @else {
+        <ds-button variant="primary" label="Show skeleton" (clicked)="showSkeletonDemo.set(true)" />
+      }
+    </article>
+
+    <article class="demo-card">
       <h2>Textarea</h2>
       <ds-textarea
         id="demo-notes"

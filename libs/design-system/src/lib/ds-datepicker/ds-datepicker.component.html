@@ -1,0 +1,29 @@
+<div class="ds-datepicker" [class.ds-datepicker--invalid]="!!error()">
+  @if (label()) {
+    <label class="ds-datepicker__label" [attr.for]="id() || null">
+      {{ label() }}
+      @if (required()) {
+        <span class="ds-datepicker__required" aria-hidden="true">*</span>
+      }
+    </label>
+  }
+
+  <input
+    class="ds-datepicker__control"
+    type="date"
+    [id]="id() || null"
+    [disabled]="isFieldDisabled()"
+    [required]="required()"
+    [min]="min()"
+    [max]="max()"
+    [value]="value()"
+    (input)="onInput($any($event.target).value)"
+    (blur)="onBlur()"
+  />
+
+  @if (error()) {
+    <p class="ds-datepicker__message ds-datepicker__message--error" role="alert">{{ error() }}</p>
+  } @else if (hint()) {
+    <p class="ds-datepicker__message">{{ hint() }}</p>
+  }
+</div>

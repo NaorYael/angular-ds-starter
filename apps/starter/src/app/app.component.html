@@ -9,6 +9,12 @@
       <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Components</a>
       <a routerLink="/grid" routerLinkActive="is-active">Grid</a>
       <a routerLink="/charts" routerLinkActive="is-active">Charts</a>
+      <a routerLink="/dashboard" routerLinkActive="is-active">Dashboard</a>
+      @if (auth.isAuthenticated()) {
+        <button type="button" class="shell-nav__button" (click)="logout()">Logout</button>
+      } @else {
+        <a routerLink="/login" routerLinkActive="is-active">Login</a>
+      }
     </nav>
   </header>
 

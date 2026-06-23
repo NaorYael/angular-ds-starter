@@ -23,7 +23,15 @@
     "src/lib/ds-tabs/**/*.ts",
     "src/lib/ds-spinner/**/*.ts",
     "src/lib/ds-empty-state/**/*.ts",
-    "src/lib/charts/**/*.ts"
+    "src/lib/charts/**/*.ts",
+    "src/lib/ds-radio/**/*.ts",
+    "src/lib/ds-input-password/**/*.ts",
+    "src/lib/ds-datepicker/**/*.ts",
+    "src/lib/ds-menu/**/*.ts",
+    "src/lib/ds-tooltip/**/*.ts",
+    "src/lib/ds-avatar/**/*.ts",
+    "src/lib/ds-skeleton/**/*.ts",
+    "src/lib/ds-alert/**/*.ts"
   ],
   "exclude": ["**/*.spec.ts", "**/*.stories.ts"]
 }

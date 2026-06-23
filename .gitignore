@@ -58,7 +58,6 @@ Thumbs.db
 /libs/design-system/src/lib/ds-accordion-card/
 /libs/design-system/src/lib/ds-action-menu/
 /libs/design-system/src/lib/ds-autocomplete/
-/libs/design-system/src/lib/ds-avatar/
 /libs/design-system/src/lib/ds-bulk-actions-bar/
 /libs/design-system/src/lib/ds-button-action/
 /libs/design-system/src/lib/ds-button-action-icon/
@@ -87,14 +86,12 @@ Thumbs.db
 /libs/design-system/src/lib/ds-input-no-border/
 /libs/design-system/src/lib/ds-input-ordinary-search/
 /libs/design-system/src/lib/ds-input-otp/
-/libs/design-system/src/lib/ds-input-password/
 /libs/design-system/src/lib/ds-input-phone/
 /libs/design-system/src/lib/ds-input-search/
 /libs/design-system/src/lib/ds-input-select-button/
 /libs/design-system/src/lib/ds-input-switch/
 /libs/design-system/src/lib/ds-link/
 /libs/design-system/src/lib/ds-loader/
-/libs/design-system/src/lib/ds-menu/
 /libs/design-system/src/lib/ds-menu-nested-navigation/
 /libs/design-system/src/lib/ds-multi-select/
 /libs/design-system/src/lib/ds-multi-select-advanced/

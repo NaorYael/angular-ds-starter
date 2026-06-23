@@ -1,0 +1,53 @@
+.ds-datepicker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+}
+
+.ds-datepicker__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ds-color-text);
+}
+
+.ds-datepicker__required {
+  color: var(--ds-color-danger);
+  margin-inline-start: 0.125rem;
+}
+
+.ds-datepicker__control {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--ds-color-border);
+  border-radius: var(--ds-radius-md);
+  background: var(--ds-color-surface);
+  color: var(--ds-color-text);
+  font: inherit;
+
+  &:focus {
+    outline: none;
+    border-color: var(--ds-color-primary);
+    box-shadow: 0 0 0 3px var(--ds-color-primary-subtle);
+  }
+
+  &:disabled {
+    background: var(--ds-color-surface-muted);
+    cursor: not-allowed;
+  }
+}
+
+.ds-datepicker--invalid .ds-datepicker__control {
+  border-color: var(--ds-color-danger);
+}
+
+.ds-datepicker__message {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--ds-color-text-muted);
+
+  &--error {
+    color: var(--ds-color-danger);
+  }
+}

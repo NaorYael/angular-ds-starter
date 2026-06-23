@@ -1,0 +1,52 @@
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dashboard-header__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashboard-header h1 {
+  margin: 0 0 0.25rem;
+}
+
+.dashboard-header p {
+  margin: 0;
+  color: var(--ds-color-text-muted);
+}
+
+.dashboard-panel {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--ds-color-border);
+  border-radius: var(--ds-radius-lg);
+  background: var(--ds-color-surface);
+}
+
+.dashboard-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-panel__header h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.todo-list {
+  margin: 0;
+  padding-inline-start: 1.25rem;
+  color: var(--ds-color-text);
+}
+
+.todo-list li + li {
+  margin-top: 0.5rem;
+}

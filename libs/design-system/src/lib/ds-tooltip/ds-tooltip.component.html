@@ -1,0 +1,14 @@
+<div
+  class="ds-tooltip-host"
+  [class.ds-tooltip-host--top]="position() === 'top'"
+  [class.ds-tooltip-host--bottom]="position() === 'bottom'"
+  (mouseenter)="show()"
+  (mouseleave)="hide()"
+  (focusin)="show()"
+  (focusout)="hide()"
+>
+  <ng-content />
+  @if (visible()) {
+    <div class="ds-tooltip" role="tooltip">{{ text() }}</div>
+  }
+</div>

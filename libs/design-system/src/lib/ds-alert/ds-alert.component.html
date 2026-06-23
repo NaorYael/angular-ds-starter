@@ -1,0 +1,10 @@
+<div class="ds-alert__content">
+  @if (title()) {
+    <p class="ds-alert__title">{{ title() }}</p>
+  }
+  <p class="ds-alert__message">{{ message() }}</p>
+</div>
+
+@if (dismissible()) {
+  <button type="button" class="ds-alert__close" aria-label="Dismiss alert" (click)="dismiss()">×</button>
+}

@@ -1,0 +1,7 @@
+<div class="ds-avatar" [class]="'ds-avatar--' + size()" [attr.aria-label]="name() || 'Avatar'">
+  @if (imageUrl()) {
+    <img class="ds-avatar__image" [src]="imageUrl()" [alt]="name() || 'Avatar'" />
+  } @else {
+    <span class="ds-avatar__initials">{{ initials() }}</span>
+  }
+</div>

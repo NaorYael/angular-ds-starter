@@ -1,0 +1,30 @@
+.ds-tooltip-host {
+  position: relative;
+  display: inline-flex;
+}
+
+.ds-tooltip {
+  position: absolute;
+  z-index: 40;
+  max-width: 16rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--ds-radius-sm);
+  background: var(--ds-color-text);
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  white-space: normal;
+  pointer-events: none;
+}
+
+.ds-tooltip-host--top .ds-tooltip {
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ds-tooltip-host--bottom .ds-tooltip {
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+}

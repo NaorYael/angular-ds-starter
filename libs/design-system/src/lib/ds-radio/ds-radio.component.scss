@@ -1,0 +1,97 @@
+.ds-radio {
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+
+.ds-radio__legend {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ds-color-text);
+}
+
+.ds-radio__required {
+  color: var(--ds-color-danger);
+  margin-inline-start: 0.125rem;
+}
+
+.ds-radio__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+
+  &--horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+.ds-radio__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+}
+
+.ds-radio__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ds-radio__control {
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 1px solid var(--ds-color-border);
+  border-radius: 50%;
+  background: var(--ds-color-surface);
+  flex-shrink: 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0.25rem;
+    border-radius: 50%;
+    background: var(--ds-color-primary);
+    transform: scale(0);
+    transition: transform 0.12s ease;
+  }
+}
+
+.ds-radio__input:checked + .ds-radio__control {
+  border-color: var(--ds-color-primary);
+}
+
+.ds-radio__input:checked + .ds-radio__control::after {
+  transform: scale(1);
+}
+
+.ds-radio__input:focus-visible + .ds-radio__control {
+  box-shadow: 0 0 0 3px var(--ds-color-primary-subtle);
+}
+
+.ds-radio__label {
+  font-size: 0.875rem;
+  color: var(--ds-color-text);
+}
+
+.ds-radio__message {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--ds-color-text-muted);
+
+  &--error {
+    color: var(--ds-color-danger);
+  }
+}

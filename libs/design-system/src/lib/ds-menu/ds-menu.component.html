@@ -1,0 +1,31 @@
+<div class="ds-menu">
+  <button
+    type="button"
+    class="ds-menu__trigger"
+    [attr.aria-expanded]="open()"
+    aria-haspopup="menu"
+    [disabled]="disabled()"
+    (click)="toggle()"
+  >
+    {{ label() }}
+    <span class="ds-menu__chevron" [class.ds-menu__chevron--open]="open()">▾</span>
+  </button>
+
+  @if (open()) {
+    <div class="ds-menu__panel" role="menu">
+      @for (item of items(); track item.label) {
+        <button
+          type="button"
+          class="ds-menu__item"
+          role="menuitem"
+          [class.ds-menu__item--danger]="item.danger"
+          [disabled]="item.disabled"
+          (click)="selectItem(item)"
+        >
+          {{ item.label }}
+        </button>
+      }
+      <ng-content select="[ds-menu-item]" />
+    </div>
+  }
+</div>
