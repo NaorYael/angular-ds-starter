@@ -220,6 +220,60 @@
       <h2>Dialog</h2>
       <ds-button variant="primary" label="Open dialog" (clicked)="openDialog()" />
     </article>
+
+    <article class="demo-card">
+      <h2>Tag &amp; Progress</h2>
+      <div class="demo-row">
+        @for (tag of tags(); track tag) {
+          <ds-tag [label]="tag" variant="primary" [removable]="true" (removed)="removeTag(tag)" />
+        }
+      </div>
+      <ds-progress label="Upload progress" [value]="68" />
+    </article>
+
+    <article class="demo-card">
+      <h2>Breadcrumbs</h2>
+      <ds-breadcrumbs [items]="[{ label: 'Home', href: '/' }, { label: 'Components' }]" />
+    </article>
+
+    <article class="demo-card">
+      <h2>Stepper</h2>
+      <ds-stepper [steps]="stepperSteps" [(value)]="stepIndex" />
+    </article>
+
+    <article class="demo-card">
+      <h2>Autocomplete</h2>
+      <ds-autocomplete label="City" [options]="cityOptions" [(ngModel)]="city" />
+      <p class="demo-hint">Selected: {{ city || '—' }}</p>
+    </article>
+
+    <article class="demo-card">
+      <h2>Multi select</h2>
+      <ds-multi-select label="Skills" [options]="skillOptions" [(ngModel)]="skills" />
+      <p class="demo-hint">Selected: {{ skills.join(', ') || '—' }}</p>
+    </article>
+
+    <article class="demo-card">
+      <h2>File upload</h2>
+      <ds-file-upload (filesSelected)="onFilesSelected($event)" />
+      @if (uploadMessage()) {
+        <p class="demo-hint">Files: {{ uploadMessage() }}</p>
+      }
+    </article>
+
+    <article class="demo-card demo-card--wide">
+      <h2>Table &amp; Pagination</h2>
+      <ds-table [columns]="tableColumns" [data]="pagedTableData()" />
+      <ds-pagination [(page)]="tablePage" [pageSize]="5" [total]="allTableData.length" />
+    </article>
+
+    <article class="demo-card">
+      <h2>Drawer</h2>
+      <ds-button variant="secondary" label="Open drawer" (clicked)="drawerVisible.set(true)" />
+      <ds-drawer [(visible)]="drawerVisible" title="Filters">
+        <p>Place filter controls or detail panels here.</p>
+      </ds-drawer>
+    </article>
   </div>
 </section>
 

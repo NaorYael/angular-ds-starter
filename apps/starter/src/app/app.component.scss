@@ -60,6 +60,14 @@
   cursor: pointer;
 }
 
+.shell-loading {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  background: var(--ds-color-surface-muted);
+  border-bottom: 1px solid var(--ds-color-border);
+}
+
 .shell-main {
   flex: 1;
   padding: 1.5rem;

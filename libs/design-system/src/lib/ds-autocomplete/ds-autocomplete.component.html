@@ -1,0 +1,52 @@
+<div class="ds-autocomplete" [class.ds-autocomplete--invalid]="!!error()">
+  @if (label()) {
+    <label class="ds-autocomplete__label" [attr.for]="id() || null">
+      {{ label() }}
+      @if (required()) {
+        <span class="ds-autocomplete__required" aria-hidden="true">*</span>
+      }
+    </label>
+  }
+
+  <div class="ds-autocomplete__wrapper">
+    <input
+      class="ds-autocomplete__control"
+      type="text"
+      role="combobox"
+      [attr.aria-expanded]="isOpen()"
+      [id]="id() || null"
+      [placeholder]="placeholder()"
+      [disabled]="isFieldDisabled()"
+      [required]="required()"
+      [value]="query()"
+      (input)="onInput($any($event.target).value)"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+    />
+
+    @if (isOpen() && filteredOptions().length) {
+      <ul class="ds-autocomplete__list" role="listbox">
+        @for (option of filteredOptions(); track option.value) {
+          <li>
+            <button
+              type="button"
+              class="ds-autocomplete__option"
+              role="option"
+              [disabled]="option.disabled ?? false"
+              (mousedown)="$event.preventDefault()"
+              (click)="selectOption(option)"
+            >
+              {{ option.label }}
+            </button>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+
+  @if (error()) {
+    <p class="ds-autocomplete__message ds-autocomplete__message--error" role="alert">{{ error() }}</p>
+  } @else if (hint()) {
+    <p class="ds-autocomplete__message">{{ hint() }}</p>
+  }
+</div>

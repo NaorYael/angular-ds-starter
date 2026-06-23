@@ -1,0 +1,47 @@
+<div class="ds-multi-select" [class.ds-multi-select--invalid]="!!error()">
+  @if (label()) {
+    <label class="ds-multi-select__label" [attr.for]="id() || null">
+      {{ label() }}
+      @if (required()) {
+        <span class="ds-multi-select__required" aria-hidden="true">*</span>
+      }
+    </label>
+  }
+
+  <div class="ds-multi-select__wrapper">
+    <button
+      type="button"
+      class="ds-multi-select__trigger"
+      [id]="id() || null"
+      [disabled]="isFieldDisabled()"
+      [attr.aria-expanded]="isOpen()"
+      (click)="toggleOpen()"
+      (blur)="onBlur()"
+    >
+      <span class="ds-multi-select__value">{{ selectedLabels() }}</span>
+      <span class="ds-multi-select__chevron" aria-hidden="true">▾</span>
+    </button>
+
+    @if (isOpen()) {
+      <div class="ds-multi-select__panel" role="listbox" aria-multiselectable="true">
+        @for (option of options(); track option.value) {
+          <label class="ds-multi-select__option">
+            <input
+              type="checkbox"
+              [checked]="isSelected(option)"
+              [disabled]="option.disabled ?? false"
+              (change)="toggleOption(option)"
+            />
+            <span>{{ option.label }}</span>
+          </label>
+        }
+      </div>
+    }
+  </div>
+
+  @if (error()) {
+    <p class="ds-multi-select__message ds-multi-select__message--error" role="alert">{{ error() }}</p>
+  } @else if (hint()) {
+    <p class="ds-multi-select__message">{{ hint() }}</p>
+  }
+</div>

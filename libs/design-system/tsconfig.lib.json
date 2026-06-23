@@ -31,7 +31,17 @@
     "src/lib/ds-tooltip/**/*.ts",
     "src/lib/ds-avatar/**/*.ts",
     "src/lib/ds-skeleton/**/*.ts",
-    "src/lib/ds-alert/**/*.ts"
+    "src/lib/ds-alert/**/*.ts",
+    "src/lib/ds-tag/**/*.ts",
+    "src/lib/ds-progress/**/*.ts",
+    "src/lib/ds-breadcrumbs/**/*.ts",
+    "src/lib/ds-stepper/**/*.ts",
+    "src/lib/ds-pagination/**/*.ts",
+    "src/lib/ds-table/**/*.ts",
+    "src/lib/ds-drawer/**/*.ts",
+    "src/lib/ds-autocomplete/**/*.ts",
+    "src/lib/ds-multi-select/**/*.ts",
+    "src/lib/ds-file-upload/**/*.ts"
   ],
   "exclude": ["**/*.spec.ts", "**/*.stories.ts"]
 }

@@ -14,15 +14,42 @@
 
 .page-header p {
   margin: 0;
-  color: var(--ds-grayscale-70, #667085);
+  color: var(--ds-color-text-muted);
 }
 
-.grid-shell {
-  background: #fff;
-  border: 1px solid var(--ds-grayscale-20, #e4e7ec);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  min-height: 360px;
+.grid-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.grid-section h2 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.grid-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+
+  button {
+    min-height: 2rem;
+    padding: 0 0.75rem;
+    border: 1px solid var(--ds-color-border);
+    border-radius: var(--ds-radius-md);
+    background: var(--ds-color-surface);
+    color: var(--ds-color-text);
+    font: inherit;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
 }
 
 code {

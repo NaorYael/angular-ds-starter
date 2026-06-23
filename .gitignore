@@ -57,8 +57,7 @@ Thumbs.db
 /libs/design-system/toast-messages/
 /libs/design-system/src/lib/ds-accordion-card/
 /libs/design-system/src/lib/ds-action-menu/
-/libs/design-system/src/lib/ds-autocomplete/
-/libs/design-system/src/lib/ds-bulk-actions-bar/
+/libs/design-system/src/lib/ds-action-menu/
 /libs/design-system/src/lib/ds-button-action/
 /libs/design-system/src/lib/ds-button-action-icon/
 /libs/design-system/src/lib/ds-button-action-with-drop/
@@ -93,7 +92,6 @@ Thumbs.db
 /libs/design-system/src/lib/ds-link/
 /libs/design-system/src/lib/ds-loader/
 /libs/design-system/src/lib/ds-menu-nested-navigation/
-/libs/design-system/src/lib/ds-multi-select/
 /libs/design-system/src/lib/ds-multi-select-advanced/
 /libs/design-system/src/lib/ds-orderlist/
 /libs/design-system/src/lib/ds-paginator/
@@ -113,7 +111,6 @@ Thumbs.db
 /libs/design-system/src/lib/ds-slider/
 /libs/design-system/src/lib/ds-split-button-group/
 /libs/design-system/src/lib/ds-status-alert/
-/libs/design-system/src/lib/ds-stepper/
 /libs/design-system/src/lib/ds-stepper-input-number/
 /libs/design-system/src/lib/ds-steps/
 /libs/design-system/src/lib/ds-svg-icon/
@@ -124,7 +121,6 @@ Thumbs.db
 /libs/design-system/src/lib/ds-table-side-tabs/
 /libs/design-system/src/lib/ds-tabs-bar/
 /libs/design-system/src/lib/ds-tabs-for-input/
-/libs/design-system/src/lib/ds-tag/
 /libs/design-system/src/lib/ds-text-area/
 /libs/design-system/src/lib/ds-validation-input/
 /libs/design-system/src/lib/ds-validation-message/

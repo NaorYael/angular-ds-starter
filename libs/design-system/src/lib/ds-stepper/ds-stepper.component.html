@@ -1,0 +1,19 @@
+<ol class="ds-stepper">
+  @for (step of steps(); track step.label; let index = $index) {
+    <li
+      class="ds-stepper__step"
+      [class.ds-stepper__step--complete]="isComplete(index)"
+      [class.ds-stepper__step--active]="isActive(index)"
+    >
+      <button type="button" class="ds-stepper__button" (click)="selectStep(index)">
+        <span class="ds-stepper__index">{{ index + 1 }}</span>
+        <span class="ds-stepper__content">
+          <span class="ds-stepper__label">{{ step.label }}</span>
+          @if (step.description) {
+            <span class="ds-stepper__description">{{ step.description }}</span>
+          }
+        </span>
+      </button>
+    </li>
+  }
+</ol>

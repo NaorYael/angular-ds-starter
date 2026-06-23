@@ -1,0 +1,20 @@
+@if (selectedCount() > 0) {
+  <div class="ds-bulk">
+    <div class="ds-bulk-inner" #inner [style.transform]="innerTransform()">
+      @if (!hideBulkCount()) {
+        <div class="ds-bulk-checkbox">
+          <ds-svg-icon
+            svgSize="small"
+            [icon]="bulkCheckboxIcon()"
+            [svgStyle]="{ fill: 'var(--ds-input-chackbox-and-redio-butten-icon-dark, #292D33)' }"
+          />
+        </div>
+        <div class="ds-bulk-count">{{ bulkAction() }} {{ 'bulk.records' | translate }}</div>
+        <div class="ds-bulk-separator">|</div>
+      }
+      <div class="ds-bulk-actions" #actionsWrap>
+        <ng-content />
+      </div>
+    </div>
+  </div>
+}

@@ -1,0 +1,43 @@
+.ds-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.ds-pagination__range {
+  color: var(--ds-color-text-muted);
+}
+
+.ds-pagination__controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ds-pagination__page {
+  color: var(--ds-color-text);
+  font-weight: 600;
+}
+
+.ds-pagination__button {
+  min-height: 2rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--ds-color-border);
+  border-radius: var(--ds-radius-md);
+  background: var(--ds-color-surface);
+  color: var(--ds-color-text);
+  font: inherit;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background: var(--ds-color-surface-hover);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

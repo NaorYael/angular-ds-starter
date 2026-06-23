@@ -1,0 +1,6 @@
+<span class="ds-tag" [class]="'ds-tag--' + variant()">
+  <span class="ds-tag__label">{{ label() }}</span>
+  @if (removable()) {
+    <button type="button" class="ds-tag__remove" aria-label="Remove" (click)="onRemove($event)">×</button>
+  }
+</span>

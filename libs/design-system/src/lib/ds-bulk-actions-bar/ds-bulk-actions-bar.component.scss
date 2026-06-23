@@ -1,0 +1,106 @@
+:host {
+  display: block;
+}
+
+.ds-bulk {
+  position: fixed;
+  inset-block-end: 0;
+  inset-inline: 0;
+  margin-inline: auto;
+  z-index: 1000;
+  width: fit-content;
+  max-width: 100%;
+  padding-block-end: calc(0.875rem + env(safe-area-inset-bottom, 0));
+  border-radius: 0.75rem;
+  pointer-events: none;
+}
+
+.ds-bulk-separator {
+  color: var(--ds-buttons-white-secondary-border);
+  text-align: center;
+  font-size: var(--ds-font-size-3);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.ds-bulk-checkbox {
+  display: flex;
+  width: var(--ds-spaces-8);
+  height: var(--ds-spaces-8);
+  padding: var(--ds-spaces-1);
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--ds-corner-radius-3);
+  background: var(--ds-input-chackbox-and-redio-butten-bg-active-dark);
+  gap: 0.625rem;
+}
+.ds-bulk-count {
+  color: var(--ds-buttons-bx-buttons-white-secondary-text-and-icon, rgba(255, 255, 255, 0.92));
+}
+
+.ds-bulk-inner {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  background: var(--ds-floting-buttens-bg);
+  border-radius: var(--ds-corner-radius-7);
+  padding-inline: var(--ds-spaces-7);
+  padding-block: var(--ds-spaces-5);
+  justify-content: flex-end;
+  gap: var(--ds-spaces-5);
+}
+
+.ds-bulk.ds-bulk-collapsed .ds-bulk-actions {
+  display: none;
+}
+
+.ds-bulk-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+}
+
+.ds-bulk-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ds-bulk-icon {
+  opacity: 0.85;
+}
+
+.ds-bulk-more {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.ds-bulk-menu {
+  position: absolute;
+  inset-inline-end: 0;
+  top: calc(100% + 0.5rem);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  padding: 0.375rem;
+  min-width: 11.25rem;
+  z-index: 50;
+}
+
+.ds-bulk-menu-item {
+  width: 100%;
+  text-align: start;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  padding: 0.625rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.ds-bulk-menu-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}

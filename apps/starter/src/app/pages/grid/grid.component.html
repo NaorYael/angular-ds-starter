@@ -2,11 +2,37 @@
   <header class="page-header">
     <h1>Data Grid</h1>
     <p>
-      AG Grid wrapped as <code>ds-grid</code> from <code>@ds/grid</code> — ready for take-home table tasks.
+      AG Grid wrapped as <code>ds-grid</code> from <code>@ds/grid</code> with badge/actions cell renderers and a
+      server-side pagination demo.
     </p>
   </header>
 
-  <div class="grid-shell">
-    <ds-grid [rowData]="rowData()" [columnDefs]="columnDefs" height="28rem" />
+  <div class="grid-section">
+    <h2>Client-side grid</h2>
+    <ds-grid [rowData]="rowData()" [columnDefs]="columnDefs" height="24rem" />
+  </div>
+
+  <div class="grid-section">
+    <h2>Server-side pagination demo</h2>
+    <ds-grid
+      [rowData]="serverRows()"
+      [columnDefs]="columnDefs"
+      [loading]="loading()"
+      [pagination]="false"
+      height="22rem"
+    />
+    <div class="grid-pagination">
+      <button type="button" [disabled]="serverPage() <= 1 || loading()" (click)="loadServerPage(serverPage() - 1)">
+        Previous
+      </button>
+      <span>Page {{ serverPage() }} / {{ Math.ceil(serverTotal / serverPageSize) }}</span>
+      <button
+        type="button"
+        [disabled]="serverPage() >= Math.ceil(serverTotal / serverPageSize) || loading()"
+        (click)="loadServerPage(serverPage() + 1)"
+      >
+        Next
+      </button>
+    </div>
   </div>
 </section>

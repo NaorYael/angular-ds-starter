@@ -1,0 +1,14 @@
+@if (visible()) {
+  <div class="ds-drawer__backdrop" (click)="onBackdropClick()"></div>
+  <aside class="ds-drawer__panel" [style.width]="width()" role="dialog" aria-modal="true" [attr.aria-label]="title() || 'Drawer'">
+    <header class="ds-drawer__header">
+      @if (title()) {
+        <h2 class="ds-drawer__title">{{ title() }}</h2>
+      }
+      <button type="button" class="ds-drawer__close" aria-label="Close" (click)="close()">×</button>
+    </header>
+    <div class="ds-drawer__body">
+      <ng-content />
+    </div>
+  </aside>
+}

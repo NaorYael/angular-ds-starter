@@ -1,0 +1,26 @@
+<div
+  class="ds-file-upload"
+  [class.ds-file-upload--dragging]="isDragging()"
+  [class.ds-file-upload--disabled]="disabled()"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave()"
+  (drop)="onDrop($event)"
+>
+  <input
+    #fileInput
+    class="ds-file-upload__input"
+    type="file"
+    [accept]="accept()"
+    [multiple]="multiple()"
+    [disabled]="disabled()"
+    (change)="onInputChange($event)"
+  />
+
+  <button type="button" class="ds-file-upload__dropzone" [disabled]="disabled()" (click)="fileInput.click()">
+    <span class="ds-file-upload__label">{{ label() }}</span>
+    <span class="ds-file-upload__hint">{{ hint() }}</span>
+    @if (fileNames()) {
+      <span class="ds-file-upload__files">{{ fileNames() }}</span>
+    }
+  </button>
+</div>

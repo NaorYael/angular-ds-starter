@@ -1,10 +1,22 @@
 <div class="ds-grid" [style.height]="height()">
   <ag-grid-angular
     class="ds-grid__table"
+    [class.ds-grid__table--hidden]="loading() || isEmpty()"
     [theme]="theme"
     [rowData]="rowData()"
     [columnDefs]="columnDefs()"
     [gridOptions]="mergedGridOptions()"
     (gridReady)="onGridReady($event)"
   />
+
+  @if (loading()) {
+    <div class="ds-grid__state">
+      <span class="ds-grid__spinner" aria-hidden="true"></span>
+      <p>Loading rows...</p>
+    </div>
+  } @else if (isEmpty()) {
+    <div class="ds-grid__state ds-grid__state--empty">
+      <p>{{ emptyMessage() }}</p>
+    </div>
+  }
 </div>

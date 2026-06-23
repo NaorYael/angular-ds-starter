@@ -26,6 +26,11 @@ export const appRoutes: Route[] = [
     loadComponent: () => import('./pages/dashboard/dashboard.component').then((m) => m.DashboardComponent),
   },
   {
+    path: 'settings',
+    canActivate: [authGuard],
+    loadComponent: () => import('./pages/settings/settings.component').then((m) => m.SettingsComponent),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

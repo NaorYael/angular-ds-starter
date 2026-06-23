@@ -1,0 +1,26 @@
+<div class="ds-table" [class.ds-table--striped]="striped()">
+  <table>
+    <thead>
+      <tr>
+        @for (column of columns(); track column.key) {
+          <th [class]="'ds-table__cell--' + (column.align ?? 'start')">{{ column.header }}</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @if (!data().length) {
+        <tr>
+          <td class="ds-table__empty" [attr.colspan]="columns().length">{{ emptyMessage() }}</td>
+        </tr>
+      } @else {
+        @for (row of data(); track $index) {
+          <tr>
+            @for (column of columns(); track column.key) {
+              <td [class]="'ds-table__cell--' + (column.align ?? 'start')">{{ cellValue(row, column.key) }}</td>
+            }
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,64 @@
+.ds-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 1.5rem;
+  padding: 0 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--ds-radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+
+  &--neutral {
+    background: var(--ds-color-surface-muted);
+    color: var(--ds-color-text);
+    border-color: var(--ds-color-border);
+  }
+
+  &--primary {
+    background: var(--ds-color-primary-subtle);
+    color: var(--ds-color-primary);
+    border-color: rgb(37 99 235 / 25%);
+  }
+
+  &--success {
+    background: var(--ds-color-success-subtle);
+    color: var(--ds-color-success);
+    border-color: rgb(21 128 61 / 25%);
+  }
+
+  &--warning {
+    background: var(--ds-color-warning-subtle);
+    color: var(--ds-color-warning);
+    border-color: rgb(180 83 9 / 25%);
+  }
+
+  &--danger {
+    background: rgb(220 38 38 / 12%);
+    color: var(--ds-color-danger);
+    border-color: rgb(220 38 38 / 25%);
+  }
+}
+
+.ds-tag__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font-size: 0.875rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+    background: rgb(15 23 42 / 8%);
+  }
+}

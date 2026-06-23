@@ -2,21 +2,38 @@
   <header class="shell-header">
     <div class="shell-brand">
       <span class="shell-brand__title">Angular DS Starter</span>
-      <span class="shell-brand__subtitle">Design System ready to use</span>
+      <span class="shell-brand__subtitle">{{ i18n.translate('app.subtitle') }}</span>
     </div>
 
     <nav class="shell-nav">
-      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Components</a>
-      <a routerLink="/grid" routerLinkActive="is-active">Grid</a>
-      <a routerLink="/charts" routerLinkActive="is-active">Charts</a>
-      <a routerLink="/dashboard" routerLinkActive="is-active">Dashboard</a>
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
+        {{ i18n.translate('nav.components') }}
+      </a>
+      <a routerLink="/grid" routerLinkActive="is-active">{{ i18n.translate('nav.grid') }}</a>
+      <a routerLink="/charts" routerLinkActive="is-active">{{ i18n.translate('nav.charts') }}</a>
+      <a routerLink="/dashboard" routerLinkActive="is-active">{{ i18n.translate('nav.dashboard') }}</a>
       @if (auth.isAuthenticated()) {
-        <button type="button" class="shell-nav__button" (click)="logout()">Logout</button>
+        <a routerLink="/settings" routerLinkActive="is-active">{{ i18n.translate('nav.settings') }}</a>
+      }
+      <button type="button" class="shell-nav__button" [attr.aria-label]="i18n.translate('theme.toggle')" (click)="toggleTheme()">
+        {{ theme.theme() === 'dark' ? '☀️' : '🌙' }}
+      </button>
+      <button type="button" class="shell-nav__button" (click)="toggleLocale()">
+        {{ i18n.translate('locale.toggle') }}
+      </button>
+      @if (auth.isAuthenticated()) {
+        <button type="button" class="shell-nav__button" (click)="logout()">{{ i18n.translate('nav.logout') }}</button>
       } @else {
-        <a routerLink="/login" routerLinkActive="is-active">Login</a>
+        <a routerLink="/login" routerLinkActive="is-active">{{ i18n.translate('nav.login') }}</a>
       }
     </nav>
   </header>
+
+  @if (loading.isLoading()) {
+    <div class="shell-loading" aria-live="polite">
+      <ds-spinner size="sm" label="Loading..." />
+    </div>
+  }
 
   <main class="shell-main">
     <router-outlet />

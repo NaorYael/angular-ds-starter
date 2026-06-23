@@ -1,0 +1,21 @@
+<ds-breadcrumbs [items]="breadcrumbs" />
+
+<section class="settings-page">
+  <h1>Settings</h1>
+  <p class="settings-page__subtitle">Update your profile and session preferences.</p>
+
+  <ds-card title="Profile" subtitle="Mock profile data stored in sessionStorage">
+    <div ds-card-body class="settings-page__form">
+      <ds-input label="Name" [(ngModel)]="name" />
+      <ds-input label="Email" [(ngModel)]="email" [disabled]="true" />
+      <ds-button variant="primary" label="Save profile" (clicked)="saveProfile()" />
+    </div>
+  </ds-card>
+
+  <ds-card title="Session" subtitle="Refresh token is stored for demo purposes only">
+    <div ds-card-body class="settings-page__session">
+      <p><strong>Access token:</strong> {{ auth.token() }}</p>
+      <p><strong>Refresh token:</strong> {{ auth.refreshToken() }}</p>
+    </div>
+  </ds-card>
+</section>

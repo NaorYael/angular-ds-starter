@@ -8,6 +8,6 @@
     "types": [],
     "moduleResolution": "bundler"
   },
-  "include": ["src/index.ts", "src/lib/ds-grid/**/*.ts"],
+  "include": ["src/index.ts", "src/lib/**/*.ts"],
   "exclude": ["**/*.spec.ts", "**/*.stories.ts"]
 }

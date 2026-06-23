@@ -1,0 +1,33 @@
+.ds-breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+}
+
+.ds-breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.ds-breadcrumbs__link {
+  color: var(--ds-color-primary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.ds-breadcrumbs__current {
+  color: var(--ds-color-text-muted);
+}
+
+.ds-breadcrumbs__separator {
+  color: var(--ds-color-text-muted);
+}

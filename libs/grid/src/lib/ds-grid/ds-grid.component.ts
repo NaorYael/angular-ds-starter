@@ -13,16 +13,16 @@ import {
 ModuleRegistry.registerModules([AllCommunityModule]);
 
 const dsGridTheme = themeQuartz.withParams({
-  accentColor: '#2563eb',
-  backgroundColor: '#ffffff',
-  borderColor: '#e2e8f0',
-  browserColorScheme: 'light',
-  chromeBackgroundColor: '#f8fafc',
+  accentColor: 'var(--ds-color-primary)',
+  backgroundColor: 'var(--ds-color-surface)',
+  borderColor: 'var(--ds-color-border)',
+  browserColorScheme: 'inherit',
+  chromeBackgroundColor: 'var(--ds-color-surface-muted)',
   fontFamily: 'inherit',
   fontSize: 14,
-  headerBackgroundColor: '#f8fafc',
+  headerBackgroundColor: 'var(--ds-color-surface-muted)',
   headerFontWeight: 600,
-  rowHoverColor: '#eff6ff',
+  rowHoverColor: 'var(--ds-color-surface-hover)',
 });
 
 @Component({
@@ -39,16 +39,21 @@ export class DsGridComponent<TData = unknown> {
   readonly height = input('24rem');
   readonly pagination = input(true);
   readonly pageSize = input(10);
+  readonly loading = input(false);
+  readonly emptyMessage = input('No rows to display');
 
   readonly gridReady = output<GridReadyEvent<TData>>();
 
   protected readonly theme = dsGridTheme;
+
+  protected readonly isEmpty = computed(() => !this.loading() && !(this.rowData()?.length ?? 0));
 
   protected readonly mergedGridOptions = computed<GridOptions<TData>>(() => ({
     animateRows: true,
     pagination: this.pagination(),
     paginationPageSize: this.pageSize(),
     suppressCellFocus: true,
+    overlayNoRowsTemplate: `<span class="ds-grid__overlay">${this.emptyMessage()}</span>`,
     ...this.gridOptions(),
   }));
 

@@ -1,4 +1,5 @@
-:root {
+:root,
+[data-theme='light'] {
   --ds-color-primary: #2563eb;
   --ds-color-primary-hover: #1d4ed8;
   --ds-color-primary-subtle: rgb(37 99 235 / 12%);
@@ -20,6 +21,27 @@
   --ds-radius-md: 0.5rem;
   --ds-radius-lg: 0.75rem;
   --ds-shadow-lg: 0 20px 25px -5px rgb(15 23 42 / 10%), 0 8px 10px -6px rgb(15 23 42 / 10%);
+}
+
+[data-theme='dark'] {
+  --ds-color-primary: #60a5fa;
+  --ds-color-primary-hover: #93c5fd;
+  --ds-color-primary-subtle: rgb(96 165 250 / 16%);
+  --ds-color-danger: #f87171;
+  --ds-color-danger-hover: #fca5a5;
+  --ds-color-success: #4ade80;
+  --ds-color-success-subtle: rgb(74 222 128 / 14%);
+  --ds-color-warning: #fbbf24;
+  --ds-color-warning-subtle: rgb(251 191 36 / 14%);
+  --ds-color-on-primary: #0f172a;
+  --ds-color-text: #f8fafc;
+  --ds-color-text-muted: #94a3b8;
+  --ds-color-surface: #0f172a;
+  --ds-color-surface-hover: #1e293b;
+  --ds-color-surface-muted: #1e293b;
+  --ds-color-border: #334155;
+  --ds-color-background: #020617;
+  --ds-shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 35%), 0 8px 10px -6px rgb(0 0 0 / 35%);
 }
 
 *,
