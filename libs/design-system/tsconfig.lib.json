@@ -12,7 +12,12 @@
     "src/index.ts",
     "src/lib/ds-button/**/*.ts",
     "src/lib/ds-input/**/*.ts",
-    "src/lib/ds-dialog/**/*.ts"
+    "src/lib/ds-dialog/**/*.ts",
+    "src/lib/ds-select/**/*.ts",
+    "src/lib/ds-checkbox/**/*.ts",
+    "src/lib/ds-badge/**/*.ts",
+    "src/lib/ds-card/**/*.ts",
+    "src/lib/ds-toast/**/*.ts"
   ],
   "exclude": ["**/*.spec.ts", "**/*.stories.ts"]
 }

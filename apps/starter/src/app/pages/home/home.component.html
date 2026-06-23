@@ -28,6 +28,57 @@
     </article>
 
     <article class="demo-card">
+      <h2>Select</h2>
+      <ds-select
+        id="demo-role"
+        label="Role"
+        placeholder="Choose a role"
+        [options]="roleOptions"
+        [(ngModel)]="role"
+      />
+      <p class="demo-hint">Selected: {{ role || '—' }}</p>
+    </article>
+
+    <article class="demo-card">
+      <h2>Checkbox</h2>
+      <ds-checkbox id="demo-terms" label="I agree to the terms" [(ngModel)]="termsAccepted" />
+      <p class="demo-hint">Accepted: {{ termsAccepted ? 'Yes' : 'No' }}</p>
+    </article>
+
+    <article class="demo-card">
+      <h2>Badge</h2>
+      <div class="demo-row">
+        <ds-badge label="Neutral" />
+        <ds-badge label="Primary" variant="primary" />
+        <ds-badge label="Success" variant="success" />
+        <ds-badge label="Warning" variant="warning" />
+        <ds-badge label="Danger" variant="danger" />
+        <ds-badge label="" variant="primary" [dot]="true" />
+      </div>
+    </article>
+
+    <article class="demo-card">
+      <h2>Card</h2>
+      <ds-card title="Project summary" subtitle="A simple container for grouped content.">
+        <div ds-card-body>
+          <p>Use cards for dashboards, settings panels, and form sections.</p>
+        </div>
+        <div ds-card-footer>
+          <ds-button variant="secondary" label="Cancel" />
+          <ds-button variant="primary" label="Save" />
+        </div>
+      </ds-card>
+    </article>
+
+    <article class="demo-card">
+      <h2>Toast</h2>
+      <div class="demo-row">
+        <ds-button variant="primary" label="Success toast" (clicked)="showSuccessToast()" />
+        <ds-button variant="danger" label="Error toast" (clicked)="showErrorToast()" />
+      </div>
+    </article>
+
+    <article class="demo-card">
       <h2>Dialog</h2>
       <ds-button variant="primary" label="Open dialog" (clicked)="openDialog()" />
     </article>

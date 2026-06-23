@@ -2,7 +2,7 @@
 
 A lightweight **Angular 21 + Nx** starter with a personal Design System (`ds-*` components) — ready for prototypes, take-home assignments, and personal projects.
 
-Clone this repo and start building immediately with `ds-button`, `ds-input`, `ds-dialog`, and `ds-grid`.
+Clone this repo and start building immediately with `ds-button`, `ds-input`, `ds-select`, `ds-checkbox`, `ds-badge`, `ds-card`, `ds-toast`, `ds-dialog`, and `ds-grid`.
 
 Maintained by [NaorYael](https://github.com/NaorYael).
 
@@ -10,7 +10,7 @@ Maintained by [NaorYael](https://github.com/NaorYael).
 
 | Package | Description |
 |---------|-------------|
-| `@ds/design-system` | `ds-button`, `ds-input`, `ds-dialog`, CSS tokens |
+| `@ds/design-system` | `ds-button`, `ds-input`, `ds-select`, `ds-checkbox`, `ds-badge`, `ds-card`, `ds-toast`, `ds-dialog`, CSS tokens |
 | `@ds/grid` | AG Grid wrapper (`ds-grid`) |
 | `apps/starter` | Demo app with component and grid examples |
 
@@ -67,6 +67,78 @@ export class MyComponent {
 
 Supports `ControlValueAccessor` — works with template-driven and reactive forms.
 
+### Select
+
+```typescript
+import { DsSelectComponent, DsSelectOption } from '@ds/design-system';
+
+readonly roles: DsSelectOption[] = [
+  { label: 'Admin', value: 'admin' },
+  { label: 'Editor', value: 'editor' },
+];
+
+@Component({
+  imports: [DsSelectComponent, FormsModule],
+  template: `<ds-select label="Role" [options]="roles" [(ngModel)]="role" />`,
+})
+export class MyComponent {
+  role = 'editor';
+}
+```
+
+### Checkbox
+
+```typescript
+import { DsCheckboxComponent } from '@ds/design-system';
+
+@Component({
+  imports: [DsCheckboxComponent, FormsModule],
+  template: `<ds-checkbox label="I agree" [(ngModel)]="accepted" />`,
+})
+export class MyComponent {
+  accepted = false;
+}
+```
+
+### Badge
+
+```html
+<ds-badge label="Active" variant="success" />
+<ds-badge label="" variant="primary" [dot]="true" />
+```
+
+### Card
+
+```html
+<ds-card title="Summary" subtitle="Optional description">
+  <div ds-card-body>Content goes here</div>
+  <div ds-card-footer>
+    <ds-button variant="primary" label="Save" />
+  </div>
+</ds-card>
+```
+
+### Toast
+
+Add the container once in your root layout:
+
+```html
+<ds-toast-container />
+```
+
+Then inject the service anywhere:
+
+```typescript
+import { DsToastService } from '@ds/design-system';
+
+private readonly toast = inject(DsToastService);
+
+save(): void {
+  this.toast.success('Saved successfully.');
+  this.toast.error('Save failed.', { title: 'Error' });
+}
+```
+
 ### Dialog
 
 ```html
@@ -122,7 +194,7 @@ Override them in your app styles to theme the design system.
 ```
 angular-ds-starter/
 ├── apps/starter/              # Demo application
-├── libs/design-system/        # ds-button, ds-input, ds-dialog
+├── libs/design-system/        # ds-button, ds-input, ds-select, ds-checkbox, ds-badge, ds-card, ds-toast, ds-dialog
 ├── libs/grid/                 # ds-grid (AG Grid wrapper)
 ├── package.json
 └── tsconfig.base.json         # @ds/* path aliases
